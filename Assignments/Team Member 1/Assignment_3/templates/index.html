@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://bucketvishnuraja.s3.jp-tok.cloud-object-storage.appdomain.cloud/style.css">
+</head>
+
+<body>
+  <img src="https://bucketvishnuraja.s3.jp-tok.cloud-object-storage.appdomain.cloud/profile.jpg" width="150px">
+  <img src="https://bucketvishnuraja.s3.jp-tok.cloud-object-storage.appdomain.cloud/profile1.jpg" width="150px">
+  <img src="https://bucketvishnuraja.s3.jp-tok.cloud-object-storage.appdomain.cloud/profile2.jpg" width="150px">
+  <img src="https://bucketvishnuraja.s3.jp-tok.cloud-object-storage.appdomain.cloud/profile3.jpg" width="150px">
+  <img src="https://bucketvishnuraja.s3.jp-tok.cloud-object-storage.appdomain.cloud/profile4.jpg" width="150px">
+</body>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "6e900c72-8238-401d-800d-effdb403ac3d", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "51198661-a374-453c-a7ab-26940f11d22d", // The ID of your service instance.
+    onLoad: function (instance) { instance.render(); }
+  };
+  setTimeout(function () {
+    const t = document.createElement('script');
+    t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</html>
