@@ -1,68 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login Form</title>
-	<link rel="stylesheet" type="text/css" href="..\static\css\login.css">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body >
-	<img class="wave" src="..\static\images\wave.png">
-	<div class="container">
-		
-		<div class="img">
-			<div id="png"><a href="/" title="HOME"><img style="width:75px; height:75px ; " src="..\static\images\home-page.png"></a></div>
-			<img src="..\static\images\bg.svg">
-		</div>
-		
-		
-		<div class="login-content">
-			
-			<form action='/login' method="POST">
-				<div class="msg"></div>
-				<img src="..\static\images\avatar.svg">
-				<h2 class="title">Welcome</h2>
-           		<div class="input-div one">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div">
-           		   		<h5>Username</h5>
-           		   		<input type="text" name="username" class="input" required>
-           		   </div>
-           		</div>
-           		<div class="input-div pass">
-           		   <div class="i"> 
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div">
-           		    	<h5>Password</h5>
-           		    	<input type="password"  name="password" class="input" required>
-            	   </div>
-            	</div>
-            	<a href="#">Forgot Password?</a>
-            	<input type="submit" class="btn" value="Login">
-				<span>OR</span>
-				
-				<div><b>Login with</b></div>
-				<div>
-					<ul>
-						<li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i <i class="fab fa-google"  aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
-					
-				</div> 
-				<div class="app" ><b>Don't have an account?</b><a id="app1" href="\signup">REGISTER.here</a></div>
-            </form>
-			
-        </div>
-		
+{% extends "newlayout.html" %}
+{% block content %}
+
+<div class="row d-flex justify-content-center align-items-center h-100">
+
+    <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+            alt="Sample image">
     </div>
-	
-    <script type="text/javascript" src="..\static\js\login.js"></script>
-</body>
-</html>
+
+    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form method="post">
+
+            <!-- username input -->
+            <div class="form-outline mb-4">
+                <input required type="username" name="username" class="form-control form-control-lg"
+                    placeholder="Enter username" value="{{ request.form['username'] }}" />
+                <label class="form-label" for="username">Username</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+                <input required type="password" name="password" class="form-control form-control-lg"
+                    placeholder="Enter password" value="{{ request.form['password'] }}" />
+                <label class="form-label" for="password">Password</label>
+            </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+                <!-- {% if msg!=" " %}
+                <div class="alert alert-danger" role="alert">
+                    {{ msg }}
+                </div>
+                {% endif %} -->
+                <button type="submit" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
+                        class="link-danger">Register</a></p>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
